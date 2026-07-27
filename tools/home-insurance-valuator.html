@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Home Insurance Valuator | CoverageCheckr</title>
+<meta name="description" content="Estimate your home's replacement cost and inventory your belongings. Avoid the $100k underinsurance mistake.">
+<meta property="og:title" content="Home Insurance Valuator">
+<meta property="og:description" content="Estimate your home's replacement cost and inventory your belongings. Avoid the $100k underinsurance mistake.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/home-insurance-valuator.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/home-insurance-valuator.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Home Insurance Valuator","description":"Estimate home replacement cost and personal property coverage needs","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Home Insurance Valuator</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">🏠 Home Insurance Valuator</h1>
+<p class="cvc-lead cvc-mb-3">Estimate your home's replacement cost and inventory your belongings. Avoid the $100k underinsurance mistake.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Estimate your home replacement cost and check if your dwelling coverage is sufficient. Most homeowners are underinsured by $100,000 or more because they confuse market value with replacement cost.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter your home square footage, construction cost per square foot, home age, current dwelling coverage, flood zone status, earthquake zone, and personal property value. The calculator estimates replacement cost and identifies gaps.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">If your home burns down and you are insured for $200,000 but replacement costs $350,000, you pay $150,000 out of pocket. Standard policies also exclude flood and earthquake. This calculator finds those gaps.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+<div class="cvc-input-group"><label>Home Square Footage</label><input type="number" id="sqft" placeholder="2000"></div>
+<div class="cvc-input-group"><label>Construction Cost per Sq Ft ($)</label><input type="number" id="cost_per_sqft" placeholder="180"></div>
+<div class="cvc-input-group"><label>Home Age (years)</label><input type="number" id="home_age" placeholder="15"></div>
+<div class="cvc-input-group"><label>Current Dwelling Coverage ($)</label><input type="number" id="current_coverage" placeholder="300000"></div>
+<div class="cvc-input-group"><label>Flood Zone?</label><select id="flood"><option value="">-- Select --</option><option value="yes">Yes / Don't know</option><option value="no">No</option></select></div>
+<div class="cvc-input-group"><label>Earthquake Zone?</label><select id="earthquake"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+<div class="cvc-input-group"><label>Personal Property Estimate ($)</label><input type="number" id="personal_property" placeholder="50000"></div>
+<div class="cvc-input-group"><label>High-Value Items (jewelry, art, etc.) ($)</label><input type="number" id="high_value" placeholder="0"></div>
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter your home details to estimate replacement cost and check for coverage gaps.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_home-insurance-valuator';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Home Insurance Valuator\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-home-insurance-valuator-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function calculate() {
+  const sqft = parseFloat(document.getElementById('sqft').value) || 0;
+  const costPer = parseFloat(document.getElementById('cost_per_sqft').value) || 180;
+  const age = parseFloat(document.getElementById('home_age').value) || 0;
+  const current = parseFloat(document.getElementById('current_coverage').value) || 0;
+  const flood = document.getElementById('flood').value;
+  const earthquake = document.getElementById('earthquake').value;
+  const personal = parseFloat(document.getElementById('personal_property').value) || 0;
+  const highValue = parseFloat(document.getElementById('high_value').value) || 0;
+
+  const replacement = sqft * costPer * (age > 20 ? 1.1 : 1.0);
+  const gap = replacement - current;
+  const personalRec = Math.max(personal, replacement * 0.5);
+
+  let html = '<div style="text-align:center;margin-bottom:24px">';
+  html += '<div style="font-size:2.5rem;font-weight:800;color:' + (gap>0?'#c53030':'#38a169') + '">$' + Math.abs(gap).toLocaleString() + '</div>';
+  html += '<div style="color:var(--cvc-text-muted)">' + (gap>0?'Underinsured by':'Overinsured by') + '</div></div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + replacement.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Est. Replacement Cost</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + current.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Current Coverage</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + personalRec.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Rec. Personal Property</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + highValue.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">High-Value Items</div></div>';
+  html += '</div>';
+
+  const warnings = [];
+  if (gap > 0) warnings.push('Increase dwelling coverage to $' + replacement.toLocaleString());
+  if (flood === 'yes') warnings.push('⚠️ Add flood insurance. Standard policies exclude flood.');
+  if (earthquake === 'yes') warnings.push('⚠️ Add earthquake coverage. Standard policies exclude earthquake.');
+  if (highValue > 0) warnings.push('Schedule high-value items separately. Standard limits are $1,500-$2,500.');
+  if (warnings.length > 0) { html += '<h4 style="color:var(--cvc-primary);margin-bottom:12px">Action Items:</h4><ul style="padding-left:20px">'; warnings.forEach(w => html += '<li style="margin-bottom:8px">' + w + '</li>'); html += '</ul>'; }
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(current, replacement);
+}
+
+function drawChart(current, replacement) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr; canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr); ctx.clearRect(0,0,rect.width,300);
+  const w = rect.width, h = 300;
+  const max = Math.max(current, replacement) * 1.2;
+  const barW = (w - 100) / 2;
+  const h1 = (current / max) * (h - 60);
+  const h2 = (replacement / max) * (h - 60);
+  ctx.fillStyle = '#d69e2e'; ctx.fillRect(40, h - 40 - h1, barW * 0.7, h1);
+  ctx.fillStyle = '#1a365d'; ctx.fillRect(40 + barW + 20, h - 40 - h2, barW * 0.7, h2);
+  ctx.fillStyle = '#1a202c'; ctx.font = 'bold 0.8rem sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText('$' + (current/1000).toFixed(0) + 'k', 40 + barW * 0.35, h - 40 - h1 - 8);
+  ctx.fillText('$' + (replacement/1000).toFixed(0) + 'k', 40 + barW + 20 + barW * 0.35, h - 40 - h2 - 8);
+  ctx.fillStyle = '#718096'; ctx.font = '0.75rem sans-serif';
+  ctx.fillText('Current', 40 + barW * 0.35, h - 20);
+  ctx.fillText('Replacement', 40 + barW + 20 + barW * 0.35, h - 20);
+}
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'home').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'home').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["coverage-gap-calculator", "auto-coverage-optimizer", "life-insurance-needs"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
