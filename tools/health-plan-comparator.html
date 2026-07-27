@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Health Plan Comparator | CoverageCheckr</title>
+<meta name="description" content="Compare HMO, PPO, and HDHP plans side by side. See total annual cost based on your expected healthcare use.">
+<meta property="og:title" content="Health Plan Comparator">
+<meta property="og:description" content="Compare HMO, PPO, and HDHP plans side by side. See total annual cost based on your expected healthcare use.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/health-plan-comparator.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/health-plan-comparator.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Health Plan Comparator","description":"Compare health insurance plans side by side with total annual cost analysis","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Health Plan Comparator</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">🏥 Health Plan Comparator</h1>
+<p class="cvc-lead cvc-mb-3">Compare HMO, PPO, and HDHP plans side by side. See total annual cost based on your expected healthcare use.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Compare up to three health insurance plans side by side. See total annual cost including premiums, deductibles, coinsurance, and out-of-pocket maximums for your expected healthcare usage.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter monthly premium, deductible, out-of-pocket maximum, and coinsurance percentage for each plan. Then enter your expected annual healthcare costs. The calculator shows total annual cost for each plan and identifies the winner.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">The plan with the lowest premium is often the most expensive when you actually use healthcare. This calculator reveals the true cost, not just the sticker price.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+
+<div class="cvc-input-group"><label>Plan 1: Monthly Premium ($)</label><input type="number" id="p1_premium" placeholder="400"></div>
+<div class="cvc-input-group"><label>Plan 1: Deductible ($)</label><input type="number" id="p1_deductible" placeholder="1500"></div>
+<div class="cvc-input-group"><label>Plan 1: Out-of-Pocket Max ($)</label><input type="number" id="p1_oopm" placeholder="3000"></div>
+<div class="cvc-input-group"><label>Plan 1: Coinsurance (%)</label><input type="number" id="p1_coinsurance" placeholder="20"></div>
+<div style="border-top:2px solid var(--cvc-border);margin:20px 0;padding-top:20px">
+<div class="cvc-input-group"><label>Plan 2: Monthly Premium ($)</label><input type="number" id="p2_premium" placeholder="250"></div>
+<div class="cvc-input-group"><label>Plan 2: Deductible ($)</label><input type="number" id="p2_deductible" placeholder="5000"></div>
+<div class="cvc-input-group"><label>Plan 2: Out-of-Pocket Max ($)</label><input type="number" id="p2_oopm" placeholder="8000"></div>
+<div class="cvc-input-group"><label>Plan 2: Coinsurance (%)</label><input type="number" id="p2_coinsurance" placeholder="20"></div>
+</div>
+<div style="border-top:2px solid var(--cvc-border);margin:20px 0;padding-top:20px">
+<div class="cvc-input-group"><label>Plan 3: Monthly Premium ($)</label><input type="number" id="p3_premium" placeholder="100"></div>
+<div class="cvc-input-group"><label>Plan 3: Deductible ($)</label><input type="number" id="p3_deductible" placeholder="7000"></div>
+<div class="cvc-input-group"><label>Plan 3: Out-of-Pocket Max ($)</label><input type="number" id="p3_oopm" placeholder="9000"></div>
+<div class="cvc-input-group"><label>Plan 3: Coinsurance (%)</label><input type="number" id="p3_coinsurance" placeholder="20"></div>
+</div>
+<div class="cvc-input-group"><label>Expected Annual Healthcare Cost ($)</label><input type="number" id="health_cost" placeholder="5000"></div>
+
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter three health plans and your expected healthcare costs to compare total annual cost.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_health-plan-comparator';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Health Plan Comparator\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-health-plan-comparator-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
+function calculate() {
+  const plans = [
+    { name: 'Plan 1', premium: parseFloat(document.getElementById('p1_premium').value)||0, deductible: parseFloat(document.getElementById('p1_deductible').value)||0, oopm: parseFloat(document.getElementById('p1_oopm').value)||0, coinsurance: parseFloat(document.getElementById('p1_coinsurance').value)||0 },
+    { name: 'Plan 2', premium: parseFloat(document.getElementById('p2_premium').value)||0, deductible: parseFloat(document.getElementById('p2_deductible').value)||0, oopm: parseFloat(document.getElementById('p2_oopm').value)||0, coinsurance: parseFloat(document.getElementById('p2_coinsurance').value)||0 },
+    { name: 'Plan 3', premium: parseFloat(document.getElementById('p3_premium').value)||0, deductible: parseFloat(document.getElementById('p3_deductible').value)||0, oopm: parseFloat(document.getElementById('p3_oopm').value)||0, coinsurance: parseFloat(document.getElementById('p3_coinsurance').value)||0 }
+  ];
+  const healthCost = parseFloat(document.getElementById('health_cost').value) || 0;
+
+  plans.forEach(p => {
+    const annualPremium = p.premium * 12;
+    let oop = Math.min(healthCost, p.deductible);
+    if (healthCost > p.deductible) {
+      oop += (healthCost - p.deductible) * (p.coinsurance / 100);
+    }
+    oop = Math.min(oop, p.oopm);
+    p.total = annualPremium + oop;
+    p.oop = oop;
+  });
+
+  const best = plans.reduce((a,b) => a.total < b.total ? a : b);
+
+  let html = '<div style="margin-bottom:24px">';
+  html += '<h4 style="color:var(--cvc-primary);margin-bottom:16px">Total Annual Cost Comparison</h4>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+  plans.forEach(p => {
+    const isBest = p.name === best.name;
+    html += '<div class="cvc-card" style="text-align:center;border:' + (isBest ? '2px solid #38a169' : '1px solid var(--cvc-border)') + '">';
+    html += '<div style="font-weight:700;color:var(--cvc-primary)">' + p.name + '</div>';
+    if (isBest) html += '<div style="color:#38a169;font-size:0.75rem;font-weight:600">✓ BEST</div>';
+    html += '<div style="font-size:1.5rem;font-weight:800;color:var(--cvc-primary);margin:8px 0">$' + p.total.toLocaleString() + '</div>';
+    html += '<div style="font-size:0.75rem;color:var(--cvc-text-muted)">Premiums: $' + (p.premium*12).toLocaleString() + '</div>';
+    html += '<div style="font-size:0.75rem;color:var(--cvc-text-muted)">Out-of-pocket: $' + p.oop.toLocaleString() + '</div>';
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  html += '<div style="background:var(--cvc-bg);padding:16px;border-radius:var(--cvc-radius-sm);font-size:0.9rem">';
+  html += '<strong>Winner: ' + best.name + '</strong> at $' + best.total.toLocaleString() + '/year<br>';
+  html += 'Savings vs most expensive: $' + (Math.max(...plans.map(p=>p.total)) - best.total).toLocaleString() + '</div>';
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(plans);
+}
+
+
+
+function drawChart(plans) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr);
+
+  const w = rect.width;
+  const h = 300;
+  ctx.clearRect(0, 0, w, h);
+
+  const colors = ['#1a365d', '#d69e2e', '#38a169'];
+  const barWidth = (w - 80) / plans.length;
+  const maxVal = Math.max(...plans.map(p => p.total)) * 1.1;
+
+  plans.forEach((p, i) => {
+    const barH = (p.total / maxVal) * (h - 60);
+    const x = 40 + i * barWidth + barWidth * 0.2;
+    const y = h - 40 - barH;
+
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(x, y, barWidth * 0.6, barH);
+
+    ctx.fillStyle = '#1a202c';
+    ctx.font = 'bold 0.8rem sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('$' + (p.total/1000).toFixed(1) + 'k', x + barWidth * 0.3, y - 8);
+
+    ctx.fillStyle = '#718096';
+    ctx.font = '0.75rem sans-serif';
+    ctx.fillText(p.name, x + barWidth * 0.3, h - 20);
+  });
+}
+
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'health').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'health').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["coverage-gap-calculator", "disability-coverage-checker", "life-insurance-needs"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
