@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Auto Coverage Optimizer | CoverageCheckr</title>
+<meta name="description" content="Enter your car's details and driving habits. Get recommendations on deductibles and coverage types.">
+<meta property="og:title" content="Auto Coverage Optimizer">
+<meta property="og:description" content="Enter your car's details and driving habits. Get recommendations on deductibles and coverage types.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/auto-coverage-optimizer.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/auto-coverage-optimizer.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Auto Coverage Optimizer","description":"Optimize auto insurance coverage based on vehicle value, age, and driving habits","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Auto Coverage Optimizer</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">🚗 Auto Coverage Optimizer</h1>
+<p class="cvc-lead cvc-mb-3">Enter your car's details and driving habits. Get recommendations on deductibles and coverage types.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Optimize your auto insurance based on your vehicle value, age, driving habits, and current coverage. Find out if you are over-paying or dangerously under-covered.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter your vehicle value, age, annual mileage, current liability limits, deductible, and coverage types. The calculator recommends specific changes like raising deductibles, dropping comprehensive on old cars, or adding uninsured motorist coverage.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">State minimum liability limits are dangerously low. A single accident with injuries can exceed $250,000 in damages. This calculator tells you if your coverage matches your risk.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+<div class="cvc-input-group"><label>Vehicle Value ($)</label><input type="number" id="vehicle_value" placeholder="25000"></div>
+<div class="cvc-input-group"><label>Vehicle Age (years)</label><input type="number" id="vehicle_age" placeholder="3"></div>
+<div class="cvc-input-group"><label>Annual Mileage</label><input type="number" id="mileage" placeholder="12000"></div>
+<div class="cvc-input-group"><label>Current Liability Limit</label><select id="liability"><option value="">-- Select --</option><option value="min">State Minimum</option><option value="100k">$100k/$300k</option><option value="250k">$250k/$500k</option></select></div>
+<div class="cvc-input-group"><label>Current Deductible ($)</label><input type="number" id="deductible" placeholder="500"></div>
+<div class="cvc-input-group"><label>Comprehensive/Collision?</label><select id="comp_coll"><option value="">-- Select --</option><option value="both">Both</option><option value="liability_only">Liability Only</option></select></div>
+<div class="cvc-input-group"><label>Rental Car Reimbursement?</label><select id="rental"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+<div class="cvc-input-group"><label>Roadside Assistance?</label><select id="roadside"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter your vehicle details and current coverage to get optimization recommendations.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_auto-coverage-optimizer';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Auto Coverage Optimizer\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-auto-coverage-optimizer-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function calculate() {
+  const value = parseFloat(document.getElementById('vehicle_value').value) || 0;
+  const age = parseFloat(document.getElementById('vehicle_age').value) || 0;
+  const mileage = parseFloat(document.getElementById('mileage').value) || 0;
+  const liability = document.getElementById('liability').value;
+  const deductible = parseFloat(document.getElementById('deductible').value) || 500;
+  const compColl = document.getElementById('comp_coll').value;
+  const rental = document.getElementById('rental').value;
+  const roadside = document.getElementById('roadside').value;
+
+  const recs = [];
+  if (age > 7 && value < 5000 && compColl === 'both') recs.push('Drop comprehensive/collision. Car is worth less than deductible + premiums.');
+  if (liability === 'min') recs.push('Increase liability to at least $100k/$300k. State minimum is dangerously low.');
+  if (deductible < 500 && value > 15000) recs.push('Raise deductible to $1,000. Savings usually outweigh risk for newer cars.');
+  if (rental === 'no') recs.push('Add rental reimbursement (~$15/year). Essential if you need your car for work.');
+  if (roadside === 'no') recs.push('Add roadside assistance or use AAA. Cheaper than one tow.');
+  if (mileage > 15000) recs.push('Consider usage-based insurance (UBI). Low-mileage discounts may not apply.');
+
+  let html = '<h4 style="color:var(--cvc-primary);margin-bottom:16px">Recommendations (' + recs.length + ')</h4>';
+  if (recs.length === 0) html += '<p style="color:#38a169">✅ Your coverage looks solid.</p>';
+  else { html += '<ul style="padding-left:20px">'; recs.forEach(r => html += '<li style="margin-bottom:10px">' + r + '</li>'); html += '</ul>'; }
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px">';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">' + (liability==='min'?'⚠️ Low':'✅ OK') + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Liability</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">' + (age>7&&value<5000&&compColl==='both'?'⚠️ Drop':'✅ OK') + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Comp/Collision</div></div>';
+  html += '</div>';
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(recs.length);
+}
+
+function drawChart(count) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr; canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr); ctx.clearRect(0,0,rect.width,300);
+  const w = rect.width, h = 300, cx = w/2, cy = h/2, r = Math.min(w,h)/2 - 40;
+  const good = Math.max(0, 6 - count);
+  const total = 6;
+  const start = -Math.PI/2;
+  const goodAngle = (good/total) * Math.PI * 2;
+  ctx.beginPath(); ctx.arc(cx,cy,r,start,start+goodAngle); ctx.lineWidth=30; ctx.strokeStyle='#38a169'; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx,cy,r,start+goodAngle,start+Math.PI*2); ctx.lineWidth=30; ctx.strokeStyle='#e2e8f0'; ctx.stroke();
+  ctx.fillStyle='#1a202c'; ctx.font='bold 2rem sans-serif'; ctx.textAlign='center'; ctx.fillText(good + '/6', cx, cy+10);
+  ctx.font='0.8rem sans-serif'; ctx.fillStyle='#718096'; ctx.fillText('Checks Passed', cx, cy+30);
+}
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'auto').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'auto').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["coverage-gap-calculator", "home-insurance-valuator", "life-insurance-needs"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
