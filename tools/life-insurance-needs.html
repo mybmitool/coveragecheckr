@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Life Insurance Needs Estimator | CoverageCheckr</title>
+<meta name="description" content="Calculate how much life insurance you actually need based on income, debts, and family obligations.">
+<meta property="og:title" content="Life Insurance Needs Estimator">
+<meta property="og:description" content="Calculate how much life insurance you actually need based on income, debts, and family obligations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/life-insurance-needs.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/life-insurance-needs.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Life Insurance Needs Estimator","description":"Calculate recommended life insurance coverage based on income replacement, debts, and education funding","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Life Insurance Needs Estimator</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">💰 Life Insurance Needs Estimator</h1>
+<p class="cvc-lead cvc-mb-3">Calculate how much life insurance you actually need based on income, debts, and family obligations.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Calculate how much life insurance you actually need based on your income, debts, family obligations, and existing coverage. Most people with group life through work are severely underinsured.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter your annual income, spouse income, mortgage balance, other debts, number of children, college savings goals, current savings, and existing life insurance. The calculator uses the DIME method (Debt, Income, Mortgage, Education) to recommend a coverage amount.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">Group life insurance ends when you leave your job. If you die with only $50,000 in coverage and a $300,000 mortgage, your family loses the house. This calculator shows the real number.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+
+<div class="cvc-input-group"><label>Annual Income ($)</label><input type="number" id="income" placeholder="75000"></div>
+<div class="cvc-input-group"><label>Spouse's Annual Income ($)</label><input type="number" id="spouse_income" placeholder="30000"></div>
+<div class="cvc-input-group"><label>Mortgage Balance ($)</label><input type="number" id="mortgage" placeholder="220000"></div>
+<div class="cvc-input-group"><label>Other Debts ($)</label><input type="number" id="debts" placeholder="25000"></div>
+<div class="cvc-input-group"><label>Number of Children</label><input type="number" id="children" placeholder="2"></div>
+<div class="cvc-input-group"><label>College Savings Goal per Child ($)</label><input type="number" id="college" placeholder="100000"></div>
+<div class="cvc-input-group"><label>Current Savings ($)</label><input type="number" id="savings" placeholder="50000"></div>
+<div class="cvc-input-group"><label>Existing Life Insurance ($)</label><input type="number" id="existing" placeholder="80000"></div>
+
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter your income, debts, and family needs to calculate recommended life insurance coverage.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_life-insurance-needs';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Life Insurance Needs Estimator\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-life-insurance-needs-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
+function calculate() {
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const spouseIncome = parseFloat(document.getElementById('spouse_income').value) || 0;
+  const mortgage = parseFloat(document.getElementById('mortgage').value) || 0;
+  const debts = parseFloat(document.getElementById('debts').value) || 0;
+  const children = parseInt(document.getElementById('children').value) || 0;
+  const college = parseFloat(document.getElementById('college').value) || 0;
+  const savings = parseFloat(document.getElementById('savings').value) || 0;
+  const existing = parseFloat(document.getElementById('existing').value) || 0;
+
+  const incomeGap = Math.max(0, income - spouseIncome);
+  const incomeReplacement = incomeGap * 10;
+  const collegeTotal = children * college;
+  const totalNeed = incomeReplacement + mortgage + debts + collegeTotal - savings;
+  const recommended = Math.max(0, totalNeed - existing);
+
+  let html = '<div style="text-align:center;margin-bottom:24px">';
+  html += '<div style="font-size:2.5rem;font-weight:800;color:var(--cvc-primary)">$' + recommended.toLocaleString() + '</div>';
+  html += '<div style="color:var(--cvc-text-muted)">Recommended Coverage</div></div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + incomeReplacement.toLocaleString() + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">Income Replacement (10x)</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + mortgage.toLocaleString() + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">Mortgage Payoff</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + collegeTotal.toLocaleString() + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">College (' + children + ' children)</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + debts.toLocaleString() + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">Other Debts</div></div>';
+  html += '</div>';
+
+  html += '<div style="background:var(--cvc-bg);padding:16px;border-radius:var(--cvc-radius-sm);font-size:0.9rem">';
+  html += '<strong>Breakdown:</strong><br>Total Need: $' + totalNeed.toLocaleString() + '<br>';
+  html += 'Existing Coverage: $' + existing.toLocaleString() + '<br>';
+  html += 'Gap: $' + recommended.toLocaleString() + '</div>';
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(incomeReplacement, mortgage, collegeTotal, debts);
+}
+
+
+
+function drawChart(income, mortgage, college, debts) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr);
+
+  const w = rect.width;
+  const h = 300;
+  ctx.clearRect(0, 0, w, h);
+
+  const data = [income, mortgage, college, debts];
+  const labels = ['Income', 'Mortgage', 'College', 'Debts'];
+  const colors = ['#1a365d', '#d69e2e', '#38a169', '#ed8936'];
+  const total = data.reduce((a,b) => a+b, 0);
+
+  // Bar chart
+  const barWidth = (w - 80) / data.length;
+  const maxVal = Math.max(...data) * 1.1;
+
+  data.forEach((val, i) => {
+    const barH = (val / maxVal) * (h - 60);
+    const x = 40 + i * barWidth + barWidth * 0.2;
+    const y = h - 40 - barH;
+
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(x, y, barWidth * 0.6, barH);
+
+    ctx.fillStyle = '#1a202c';
+    ctx.font = 'bold 0.8rem sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('$' + (val/1000).toFixed(0) + 'k', x + barWidth * 0.3, y - 8);
+
+    ctx.fillStyle = '#718096';
+    ctx.font = '0.75rem sans-serif';
+    ctx.fillText(labels[i], x + barWidth * 0.3, h - 20);
+  });
+}
+
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'life').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'life').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["coverage-gap-calculator", "disability-coverage-checker", "home-insurance-valuator"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
