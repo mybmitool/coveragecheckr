@@ -1,0 +1,54 @@
+# coveragecheckr.com
+
+Free online calculators and educational content. Not professional advice.
+
+## Pages
+- Home: https://coveragecheckr.com/
+- Tools: https://coveragecheckr.com/tools/
+- Blog: https://coveragecheckr.com/blog/
+- About: https://coveragecheckr.com/about.html
+- Contact: https://coveragecheckr.com/contact.html
+- FAQ: https://coveragecheckr.com/faq.html
+- Sitemap: https://coveragecheckr.com/sitemap.html
+
+## Tools
+- Auto Coverage Optimizer: https://coveragecheckr.com/tools/auto-coverage-optimizer.html
+- Coverage Gap Calculator: https://coveragecheckr.com/tools/coverage-gap-calculator.html
+- Disability Coverage Checker: https://coveragecheckr.com/tools/disability-coverage-checker.html
+- Health Plan Comparator: https://coveragecheckr.com/tools/health-plan-comparator.html
+- Home Insurance Valuator: https://coveragecheckr.com/tools/home-insurance-valuator.html
+- Life Insurance Needs Estimator: https://coveragecheckr.com/tools/life-insurance-needs.html
+
+## Articles
+- Auto Insurance Rate Hike Denver 2026 (auto-insurance-rate-hike-denver-2026) -- I got my auto insurance renewal last month and I actually called my agent to confirm it was correct. $2,180 for six months. That is $363 a month. For a 2019 Honda Accord. With a clean driving record. -- July 23, 2026
+- Chicago Heat Dome Insurance Denial (chicago-heat-dome-insurance-denial) -- Why My Home Insurance Claim Got Denied After the Chicago Heat Dome—And What I Did About It Marcus Whitfield The adjuster looked at my basement and said the magic words: "Not covered." I stood there in -- July 06, 2026
+- Dropped Collision Saved 900 Regretted It (dropped-collision-saved-900-regretted-it) -- The deer came out of nowhere. One second I was driving home from a late shift at the hospital, cruising down I-70 at 65 mph, singing along to a song I can't remember. The next second, there was a brow -- July 06, 2026
+- The Renters Insurance Claim That Taught Me Everything (the-renters-insurance-claim-that-taught-me-everything) -- The Renter's Insurance Claim That Taught Me Everything About Coverage Gaps I was on the Kennedy Expressway when my phone rang. It was a Tuesday in March, and the rain was coming down hard enough that -- June 27, 2026
+- The Widow Two Kids And A Policy That Paid Nothing (the-widow-two-kids-and-a-policy-that-paid-nothing) -- The Widow, Two Kids, and a Policy That Paid Nothing I was reviewing files in my home office when my phone rang. It was a Tuesday afternoon, the kind of gray Chicago day where the sky looks like a conc -- June 24, 2026
+- What the Claims Adjuster Didn't Tell Me After My Car Accident | CoverageCheckr (what-the-claims-adjuster-didnt-tell-me-after-my-car-accident) -- What the Claims Adjuster Didn't Tell Me After My Car Accident  I learned this lesson on a rainy Tuesday night on the Kennedy Expressway. I was drivin... -- June 10, 2026
+- The Year I Almost Became a Statistic (And Why I Left Underwriting) | CoverageCheckr (the-year-i-almost-became-a-statistic-and-why-i-left-underwriting) -- The Year I Almost Became a Statistic (And Why I Left Underwriting)  You’d think someone who priced life insurance for a... -- June 09, 2026
+- The Self-Employed Guitar Teacher Who Didn't Think He Needed Disability | CoverageCheckr (the-self-employed-guitar-teacher-who-didnt-think-he-needed-disability) -- The Self-Employed Guitar Teacher Who Didn't Think He Needed Disability  I hear that at least once a month. Usually from a self-employed person – a contractor, a hairstylist, a freelance g... -- June 08, 2026
+- The Reinsurance Market Is Tightening: Your Home Insurance Premium Will Reflect It | CoverageCheckr (the-reinsurance-market-is-tightening-your-home-insurance-premium-will-reflect-it) -- The Reinsurance Market Is Tightening: Your Home Insurance Premium Will Reflect It  I was on a call last month with a former colleague who still w... -- June 07, 2026
+- The 10-Minute Disability Insurance Checkup for Freelancers and 9-to-5ers | CoverageCheckr (the-10-minute-disability-insurance-checkup-for-freelancers-and-9to5ers) -- The 10-Minute Disability Insurance Checkup for Freelancers and 9-to-5ers  That’s the question I start every disability checkup with. Most people sta... -- June 06, 2026
+- The $50,000 Surgery That Cost Me $200 Thanks to a PPO | CoverageCheckr (the-50000-surgery-that-cost-me-200-thanks-to-a-ppo) -- The $50,000 Surgery That Cost Me $200 Thanks to a PPO  I still have that statement in a file folder. Not because I’m proud of the number – though I... -- June 05, 2026
+- Replacement Cost vs. Market Value: The $100,000 Home Insurance Mistake | CoverageCheckr (replacement-cost-vs-market-value-the-100000-home-insurance-mistake) -- Replacement Cost vs. Market Value: The $100,000 Home Insurance Mistake  I ask this question at every home insurance revie... -- June 04, 2026
+- NAIC AI Transparency Law: What It Means for Your Auto Insurance Rate | CoverageCheckr (naic-ai-transparency-law-what-it-means-for-your-auto-insurance-rate) -- NAIC AI Transparency Law: What It Means for Your Auto Insurance Rate  I was at a cookout last summer. My neighbor... -- June 03, 2026
+- Medicare Advantage Network Restrictions: What Illinois Seniors Need to Know | CoverageCheckr (medicare-advantage-network-restrictions-what-illinois-seniors-need-to-know-for-2026) -- Medicare Advantage Network Restrictions: What Illinois Seniors Need to Know  I got a cal... -- June 02, 2026
+- Life Insurance Needs Estimator: Why One Times Salary Is a Lie | CoverageCheckr (life-insurance-needs-estimator-why-one-times-salary-is-a-lie) -- Life Insurance Needs Estimator: Why One Times Salary Is a Lie  I see this every wee... -- June 01, 2026
+- Insurance Deserts: Why Your Zip Code Matters More Than Your Driving Record | CoverageCheckr (insurance-deserts-why-your-zip-code-matters-more-than-your-driving-record) -- Insurance Deserts: Why Your Zip Code Matters More Than Your Driving Record... -- May 31, 2026
+- Illinois Homeowners Insurance Rates Are Up 22% in 2026: Here's Why | CoverageCheckr (illinois-homeowners-insurance-rates-are-up-22-in-2026-heres-why) -- Illinois Homeowners Insurance Rates Are Up 22% in 2026: Here's Why  I opened that renewal notice on a Tuesday morning, coff... -- May 30, 2026
+- How to Use the Auto Coverage Optimizer to Stop Overpaying | CoverageCheckr (how-to-use-the-auto-coverage-optimizer-to-stop-overpaying) -- How to Use the Auto Coverage Optimizer to Stop Overpaying  I’ve run this for hundreds of people. And nine times out of ten, they’re p... -- May 29, 2026
+- How to Read a Health Insurance Summary of Benefits Without Losing Your Mind | CoverageCheckr (how-to-read-a-health-insurance-summary-of-benefits-without-losing-your-mind) -- How to Read a Health Insurance Summary of Benefits Without Losing Your Mind  That’s not false modesty. A few years ago, I was helping my... -- May 28, 2026
+- How to Optimize Your Auto Coverage Based on Your Car's Actual Value | CoverageCheckr (how-to-optimize-your-auto-coverage-based-on-your-cars-actual-value) -- How to Optimize Your Auto Coverage Based on Your Car's Actual Value  I say this at least three times a week. Someone calls me, angry about thei... -- May 27, 2026
+- How to Find Your Insurance Coverage Gaps in 20 Minutes | CoverageCheckr (how-to-find-your-insurance-coverage-gaps-in-20-minutes) -- How to Find Your Insurance Coverage Gaps in 20 Minutes  I don’t blame you. I used to write those policies for a living, and even I don’t rea... -- May 26, 2026
+- How to Appeal a Homeowners Insurance Claim Denial: Step by Step | CoverageCheckr (how-to-appeal-a-homeowners-insurance-claim-denial-step-by-step) -- How to Appeal a Homeowners Insurance Claim Denial: Step by Step  I learned that number from a claims adjuster I used... -- May 25, 2026
+- How We Almost Lost Our House to a Flood That Wasn't Covered | CoverageCheckr (how-we-almost-lost-our-house-to-a-flood-that-wasnt-covered) -- How We Almost Lost Our House to a Flood That Wasn't Covered  I remember exactly where I was standing. Kitchen. Wednesday evening. A pan of... -- May 24, 2026
+- Health Plan Comparator: How to Compare Three Plans Side by Side | CoverageCheckr (health-plan-comparator-how-to-compare-three-plans-side-by-side) -- Health Plan Comparator: How to Compare Three Plans Side by Side Open enrollment starts next week. You have three options. How do you choose?  I get t... -- May 23, 2026
+- Employer Health Plan vs. Marketplace: Which One Saves You More? | CoverageCheckr (employer-health-plan-vs-marketplace-which-one-saves-you-more) -- #26 Employer Health Plan vs. Marketplace: Which One Saves You More? “Your employer says they cover 80% of premiums. But are you actually saving money?... -- May 22, 2026
+- Embedded Insurance: The $5/Month Protection You Don't Need | CoverageCheckr (embedded-insurance-the-5month-protection-you-dont-need) -- #25 Embedded Insurance: The $5/month ‘Protection’ You Don’t Need “Add phone protection for only $7.99? No thanks.”  I clicked “no” so fast my finger a... -- May 21, 2026
+- Disability Coverage: Are You One Injury Away From Financial Ruin? | CoverageCheckr (disability-coverage-checker-are-you-one-injury-away-from-financial-ruin) -- Disability Coverage: Are You One Injury Away From Financial Ruin?  I ask this question at every financial checkup. Most peop... -- May 20, 2026
+- Cyber Insurance for Families: Do You Really Need It? | CoverageCheckr (cyber-insurance-for-families-do-you-really-need-it) -- Cyber Insurance for Families: Do You Really Need It?  I was on a panel last year about emerging insurance risks. Someone from the... -- May 19, 2026
+- Climate Risk Modeling and Your Home Insurance: The New Reality | CoverageCheckr (climate-risk-modeling-and-your-home-insurance-the-new-reality) -- Climate Risk Modeling and Your Home Insurance: The New Reality  I got an email from a client in Des Plaines – let’s call her Mrs. Chen. She’d lived in her spli... -- May 18, 2026
+- Chicago Flood Zone Remapping: How to Know If You're at Risk | CoverageCheckr (chicago-flood-zone-remapping-how-to-know-if-youre-at-risk-and-what-to-do) -- Chicago Flood Zone Remapping: How to Know If You're at Risk  I found out because my neighbor got a l... -- May 17, 2026
+- AI Underwriting Algorithms: Why You Might Be Paying More for No Reason | CoverageCheckr (ai-underwriting-algorithms-why-you-might-be-paying-more-for-no-reason) -- AI Underwriting Algorithms: Why You Might Be Paying More for No Reason  I hear this question at least once a week. Someone pulls into my virtual office – frus... -- May 16, 2026
+- A Widow, Two Kids, and a Policy That Paid Nothing | CoverageCheckr (a-widow-two-kids-and-a-policy-that-paid-nothing) -- A Widow, Two Kids, and a Policy That Paid Nothing  I was reviewing files in my home office when my phone rang.... -- May 15, 2026
