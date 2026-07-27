@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Disability Coverage Checker | CoverageCheckr</title>
+<meta name="description" content="Enter your income, savings, and monthly expenses. See if you have a disability coverage gap.">
+<meta property="og:title" content="Disability Coverage Checker">
+<meta property="og:description" content="Enter your income, savings, and monthly expenses. See if you have a disability coverage gap.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/disability-coverage-checker.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/disability-coverage-checker.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Disability Coverage Checker","description":"Check disability insurance coverage gaps based on income and expenses","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Disability Coverage Checker</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">🦯 Disability Coverage Checker</h1>
+<p class="cvc-lead cvc-mb-3">Enter your income, savings, and monthly expenses. See if you have a disability coverage gap.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Check if you have a disability coverage gap. One in four workers becomes disabled before retirement. Most have no individual disability insurance and rely solely on employer coverage that ends when the job does.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter your monthly income, expenses, emergency savings months, employer disability coverage, individual disability policy, partner income, estimated SSDI, and housing costs. The calculator shows how many months you can survive without income and identifies the gap.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">Social Security Disability pays an average of $1,400 per month. If your expenses are $4,000, you have a $2,600 monthly gap. Without individual disability insurance, you burn through savings in months, not years.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+<div class="cvc-input-group"><label>Monthly Take-Home Income ($)</label><input type="number" id="income" placeholder="5000"></div>
+<div class="cvc-input-group"><label>Monthly Expenses ($)</label><input type="number" id="expenses" placeholder="4000"></div>
+<div class="cvc-input-group"><label>Emergency Savings (months)</label><input type="number" id="savings_months" placeholder="3"></div>
+<div class="cvc-input-group"><label>Employer Disability Coverage?</label><select id="employer_disability"><option value="">-- Select --</option><option value="yes">Yes, short-term</option><option value="long">Yes, long-term</option><option value="both">Both short and long-term</option><option value="no">No employer coverage</option></select></div>
+<div class="cvc-input-group"><label>Individual Disability Policy?</label><select id="individual_disability"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+<div class="cvc-input-group"><label>Spouse/Partner Income ($/month)</label><input type="number" id="partner_income" placeholder="0"></div>
+<div class="cvc-input-group"><label>Social Security Disability Estimate ($/month)</label><input type="number" id="ssdi" placeholder="1400"></div>
+<div class="cvc-input-group"><label>Mortgage/Rent ($/month)</label><input type="number" id="housing" placeholder="1500"></div>
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter your income, expenses, and existing disability coverage to check for gaps.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_disability-coverage-checker';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Disability Coverage Checker\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-disability-coverage-checker-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function calculate() {
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+  const savingsMonths = parseFloat(document.getElementById('savings_months').value) || 0;
+  const employer = document.getElementById('employer_disability').value;
+  const individual = document.getElementById('individual_disability').value;
+  const partner = parseFloat(document.getElementById('partner_income').value) || 0;
+  const ssdi = parseFloat(document.getElementById('ssdi').value) || 0;
+  const housing = parseFloat(document.getElementById('housing').value) || 0;
+
+  const savingsTotal = savingsMonths * income;
+  let disabilityIncome = partner + ssdi;
+  if (employer === 'yes' || employer === 'both') disabilityIncome += income * 0.6;
+  if (individual === 'yes') disabilityIncome += income * 0.5;
+  const gap = expenses - disabilityIncome;
+  const monthsCovered = gap > 0 ? Math.floor(savingsTotal / gap) : 999;
+
+  let html = '<div style="text-align:center;margin-bottom:24px">';
+  html += '<div style="font-size:2.5rem;font-weight:800;color:' + (monthsCovered<6?'#c53030':monthsCovered<12?'#ed8936':'#38a169') + '">' + (monthsCovered === 999 ? '∞' : monthsCovered) + '</div>';
+  html += '<div style="color:var(--cvc-text-muted)">Months You Can Survive Without Income</div></div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + disabilityIncome.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Monthly Disability Income</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + expenses.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Monthly Expenses</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + gap.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Monthly Gap</div></div>';
+  html += '<div class="cvc-card" style="text-align:center"><div style="font-size:1.2rem;font-weight:700;color:var(--cvc-primary)">$' + savingsTotal.toLocaleString() + '</div><div style="font-size:0.75rem;color:var(--cvc-text-muted)">Emergency Savings</div></div>';
+  html += '</div>';
+
+  const recs = [];
+  if (monthsCovered < 6) recs.push('CRITICAL: Build emergency fund to 6+ months immediately.');
+  if (employer === 'no') recs.push('No employer disability. Get individual long-term disability ASAP.');
+  if (individual === 'no' && employer !== 'long' && employer !== 'both') recs.push('No long-term disability. 1 in 4 workers becomes disabled before retirement.');
+  if (gap > 0 && individual === 'no') recs.push('Individual disability policy would cover ~$' + Math.ceil(gap).toLocaleString() + '/month gap.');
+  if (housing > income * 0.35) recs.push('Housing is ' + Math.round(housing/income*100) + '% of income. High risk if disabled.');
+  if (recs.length > 0) { html += '<h4 style="color:var(--cvc-primary);margin-bottom:12px">Recommendations:</h4><ul style="padding-left:20px">'; recs.forEach(r => html += '<li style="margin-bottom:8px">' + r + '</li>'); html += '</ul>'; }
+  else html += '<p style="color:#38a169">✅ Strong disability protection. Well done.</p>';
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(income, disabilityIncome, expenses);
+}
+
+function drawChart(income, disabilityIncome, expenses) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr; canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr); ctx.clearRect(0,0,rect.width,300);
+  const w = rect.width, h = 300;
+  const data = [income, disabilityIncome, expenses];
+  const labels = ['Current Income', 'If Disabled', 'Expenses'];
+  const colors = ['#1a365d', '#d69e2e', '#c53030'];
+  const max = Math.max(...data) * 1.2;
+  const barW = (w - 80) / 3;
+  data.forEach((val, i) => {
+    const bh = (val / max) * (h - 60);
+    const x = 40 + i * barW + barW * 0.15;
+    ctx.fillStyle = colors[i]; ctx.fillRect(x, h - 40 - bh, barW * 0.7, bh);
+    ctx.fillStyle = '#1a202c'; ctx.font = 'bold 0.8rem sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('$' + (val/1000).toFixed(1) + 'k', x + barW * 0.35, h - 40 - bh - 8);
+    ctx.fillStyle = '#718096'; ctx.font = '0.75rem sans-serif';
+    ctx.fillText(labels[i], x + barW * 0.35, h - 20);
+  });
+}
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'disability').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'disability').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["life-insurance-needs", "coverage-gap-calculator", "health-plan-comparator"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
