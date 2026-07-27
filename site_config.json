@@ -1,0 +1,27 @@
+{
+  "site_name": "CoverageCheckr",
+  "domain": "coveragecheckr.com",
+  "tagline": "Find the Gaps in Your Insurance Before Life Does",
+  "description": "Free insurance coverage calculators and guides to help you identify gaps in home, auto, life, health, and disability coverage.",
+  "author": "Marcus Whitfield",
+  "author_location": "Chicago, Illinois",
+  "prefix": "cvc",
+  "language": "en",
+  "theme_color": "#1a365d",
+  "accent_color": "#d69e2e",
+  "founded_year": 2017,
+  "total_tools": 6,
+  "ads_enabled": false,
+  "pages": {
+    "home": "index.html",
+    "about": "about.html",
+    "contact": "contact.html",
+    "faq": "faq.html",
+    "privacy": "privacy.html",
+    "terms": "terms.html",
+    "disclaimer": "disclaimer.html",
+    "disclosure": "disclosure.html",
+    "tools_home": "tools/index.html",
+    "blog_home": "blog/index.html"
+  }
+}
