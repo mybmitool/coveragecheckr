@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<title>Coverage Gap Calculator | CoverageCheckr</title>
+<meta name="description" content="Enter your existing policies and identify gaps in home, auto, life, health, and disability coverage.">
+<meta property="og:title" content="Coverage Gap Calculator">
+<meta property="og:description" content="Enter your existing policies and identify gaps in home, auto, life, health, and disability coverage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coveragecheckr.com/tools/coverage-gap-calculator.html">
+<meta property="og:image" content="https://coveragecheckr.com/images/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://coveragecheckr.com/tools/coverage-gap-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Coverage Gap Calculator","description":"Identify insurance coverage gaps across home, auto, life, health, and disability policies","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<nav class="cvc-nav"><div class="cvc-nav-inner"><a href="../index.html" class="cvc-logo">Coverage<span>Checkr</span></a><button class="cvc-menu-btn" onclick="document.querySelector('.cvc-nav-links').classList.toggle('active')">☰</button><ul class="cvc-nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" style="color:#d69e2e">Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li></ul></div></nav>
+
+<main class="cvc-container cvc-section">
+<nav class="cvc-breadcrumb" aria-label="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Coverage Gap Calculator</span></nav>
+<h1 class="cvc-h1 cvc-mb-2">🔍 Coverage Gap Calculator</h1>
+<p class="cvc-lead cvc-mb-3">Enter your existing policies and identify gaps in home, auto, life, health, and disability coverage.</p>
+
+<div class="cvc-card" style="margin-bottom:32px">
+<h2 style="font-size:1.3rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">About This Tool</h2>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">This free calculator audits your existing insurance policies across home, auto, life, health, and disability coverage. Answer 14 simple questions about your current policies, and we will identify the gaps that could leave you financially exposed.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">How It Works</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7;margin-bottom:16px">Enter details about your home insurance (backup coverage, replacement cost vs actual cash value), auto insurance (liability limits, uninsured motorist), life insurance (individual vs group), health plan (out-of-network coverage), and disability coverage. The calculator assigns a risk score from A to F and lists specific gaps.</p>
+<h3 style="font-size:1.1rem;font-weight:600;color:var(--cvc-primary);margin-bottom:12px">Why It Matters</h3>
+<p style="color:var(--cvc-text-muted);line-height:1.7">Most people are either over-insured or dangerously under-insured. The difference comes down to understanding what your policies actually cover. This calculator helps you find the gaps before life does.</p>
+</div>
+<div class="cvc-ad-slot" id="cvc-tool_top"></div>
+
+<div class="cvc-tool-layout">
+<div class="cvc-tool-panel">
+<h3>Your Information</h3>
+
+<div class="cvc-input-group"><label>Home Insurance</label><select id="home_has"><option value="">-- Select --</option><option value="yes">Yes, I have home/renters insurance</option><option value="no">No home insurance</option></select></div>
+<div class="cvc-input-group"><label>Home: Sewer/Water Backup Coverage?</label><select id="home_backup"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No / Don't know</option></select></div>
+<div class="cvc-input-group"><label>Home: Replacement Cost or Actual Cash Value?</label><select id="home_rc"><option value="">-- Select --</option><option value="rc">Replacement Cost</option><option value="acv">Actual Cash Value</option><option value="dontknow">Don't know</option></select></div>
+<div class="cvc-input-group"><label>Auto Insurance</label><select id="auto_has"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+<div class="cvc-input-group"><label>Auto: Uninsured Motorist Coverage?</label><select id="auto_um"><option value="">-- Select --</option><option value="yes">Yes</option><option value="no">No / Don't know</option></select></div>
+<div class="cvc-input-group"><label>Auto: Liability Limits</label><select id="auto_liability"><option value="">-- Select --</option><option value="min">State Minimum ($25k/$50k)</option><option value="100k">$100k/$300k</option><option value="250k">$250k/$500k or higher</option><option value="dontknow">Don't know</option></select></div>
+<div class="cvc-input-group"><label>Life Insurance (Individual, not through work)</label><select id="life_individual"><option value="">-- Select --</option><option value="yes">Yes, I own individual term/permanent</option><option value="no">No, only group through employer</option><option value="none">No life insurance at all</option></select></div>
+<div class="cvc-input-group"><label>Health Insurance: Out-of-Network Coverage?</label><select id="health_oon"><option value="">-- Select --</option><option value="yes">Yes, covered at in-network rates</option><option value="limited">Limited / emergencies only</option><option value="no">No out-of-network coverage</option><option value="dontknow">Don't know</option></select></div>
+<div class="cvc-input-group"><label>Disability Coverage (Short or Long Term)</label><select id="disability_has"><option value="">-- Select --</option><option value="yes">Yes, through work or individual</option><option value="no">No disability coverage</option><option value="dontknow">Don't know</option></select></div>
+
+<div style="display:flex;gap:12px;margin-top:24px">
+<button class="cvc-btn cvc-btn-primary" onclick="calculate()">Calculate</button>
+<button class="cvc-btn cvc-btn-outline" onclick="resetForm()">Reset</button>
+<button class="cvc-btn cvc-btn-outline" onclick="exportReport()">Export Report</button>
+</div>
+</div>
+
+<div class="cvc-tool-panel">
+<h3>Results</h3>
+<div id="results"><p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see your coverage gaps.</p></div>
+<div class="cvc-chart-container"><canvas id="resultChart"></canvas></div>
+</div>
+</div>
+
+<div class="cvc-ad-slot" id="cvc-tool_middle"></div>
+
+<div class="cvc-card" style="margin-top:48px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Related Articles</h3>
+<div id="related-articles"></div>
+</div>
+
+<div class="cvc-card" style="margin-top:24px">
+<h3 style="font-size:1.1rem;font-weight:700;color:var(--cvc-primary);margin-bottom:16px">Recommended Tools</h3>
+<div class="cvc-tool-grid" id="recommended-tools"></div>
+</div>
+</main>
+
+<div class="cvc-ad-slot" id="cvc-tool_bottom"></div>
+
+<footer class="cvc-footer"><div class="cvc-container"><div class="cvc-footer-grid-main"><div><div class="cvc-footer-brand">Coverage<span>Checkr</span></div><p class="cvc-footer-desc">Independent insurance coverage analysis. We help you find the gaps before life does.</p></div><div class="cvc-footer-links"><h4>Tools</h4><ul><li><a href="coverage-gap-calculator.html">Coverage Gap</a></li><li><a href="life-insurance-needs.html">Life Needs</a></li><li><a href="health-plan-comparator.html">Health Compare</a></li><li><a href="auto-coverage-optimizer.html">Auto Optimizer</a></li><li><a href="home-insurance-valuator.html">Home Valuator</a></li><li><a href="disability-coverage-checker.html">Disability Check</a></li></ul></div><div class="cvc-footer-links"><h4>Company</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../disclaimer.html">Disclaimer</a></li></ul></div><div class="cvc-footer-links"><h4>Navigate</h4><ul><li><a href="../index.html">Home</a></li><li><a href="index.html">All Tools</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../disclosure.html">Disclosure</a></li></ul></div></div><div class="cvc-footer-bottom"><p>© 2026 CoverageCheckr.com. All rights reserved. Not financial or legal advice.</p></div></div></footer>
+
+<script src="../ads-loader.js"></script>
+<script>
+const STORAGE_KEY = 'cvc_coverage-gap-calculator';
+
+function saveData() {
+  const data = {};
+  document.querySelectorAll('input, select').forEach(el => { data[el.id] = el.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadData() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) el.value = data[key];
+    });
+  }
+}
+
+function resetForm() {
+  document.querySelectorAll('input, select').forEach(el => el.value = '');
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('results').innerHTML = '<p style="color:var(--cvc-text-muted)">Enter your information and click Calculate to see results.</p>';
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function exportReport() {
+  const results = document.getElementById('results').innerText;
+  const blob = new Blob(['CoverageCheckr - Coverage Gap Calculator\n\n' + results + '\n\nGenerated: ' + new Date().toLocaleString()], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coveragecheckr-coverage-gap-calculator-report.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
+function calculate() {
+  const gaps = [];
+  let riskScore = 0;
+
+  if (document.getElementById('home_has').value === 'no') { gaps.push('No home/renters insurance'); riskScore += 25; }
+  if (document.getElementById('home_backup').value === 'no') { gaps.push('No sewer/water backup coverage'); riskScore += 15; }
+  if (document.getElementById('home_rc').value === 'acv') { gaps.push('Home covered at Actual Cash Value (not Replacement Cost)'); riskScore += 20; }
+  if (document.getElementById('home_rc').value === 'dontknow') { gaps.push('Unknown home coverage type'); riskScore += 10; }
+  if (document.getElementById('auto_has').value === 'no') { gaps.push('No auto insurance'); riskScore += 25; }
+  if (document.getElementById('auto_um').value === 'no') { gaps.push('No uninsured motorist coverage'); riskScore += 15; }
+  if (document.getElementById('auto_liability').value === 'min') { gaps.push('Auto liability at state minimum'); riskScore += 15; }
+  if (document.getElementById('auto_liability').value === 'dontknow') { gaps.push('Unknown auto liability limits'); riskScore += 10; }
+  if (document.getElementById('life_individual').value === 'no') { gaps.push('No individual life insurance (group only)'); riskScore += 20; }
+  if (document.getElementById('life_individual').value === 'none') { gaps.push('No life insurance at all'); riskScore += 30; }
+  if (document.getElementById('health_oon').value === 'no') { gaps.push('No out-of-network health coverage'); riskScore += 10; }
+  if (document.getElementById('health_oon').value === 'dontknow') { gaps.push('Unknown out-of-network coverage'); riskScore += 5; }
+  if (document.getElementById('disability_has').value === 'no') { gaps.push('No disability coverage'); riskScore += 25; }
+  if (document.getElementById('disability_has').value === 'dontknow') { gaps.push('Unknown disability coverage'); riskScore += 10; }
+
+  let grade = 'A';
+  let color = '#38a169';
+  if (riskScore > 15) { grade = 'B'; color = '#d69e2e'; }
+  if (riskScore > 40) { grade = 'C'; color = '#ed8936'; }
+  if (riskScore > 70) { grade = 'D'; color = '#c53030'; }
+  if (riskScore > 100) { grade = 'F'; color = '#c53030'; }
+
+  let html = '<div style="text-align:center;margin-bottom:24px">';
+  html += '<div style="font-size:4rem;font-weight:800;color:' + color + '">' + grade + '</div>';
+  html += '<div style="color:var(--cvc-text-muted)">Risk Score: ' + riskScore + '/150</div></div>';
+
+  if (gaps.length === 0) {
+    html += '<p style="color:#38a169;font-weight:600">✅ No major gaps detected. Great job!</p>';
+  } else {
+    html += '<h4 style="color:var(--cvc-primary);margin-bottom:12px">Gaps Found (' + gaps.length + '):</h4><ul style="padding-left:20px">';
+    gaps.forEach(g => { html += '<li style="margin-bottom:8px;color:var(--cvc-text)">' + g + '</li>'; });
+    html += '</ul>';
+  }
+
+  document.getElementById('results').innerHTML = html;
+  saveData();
+  drawChart(riskScore);
+}
+
+
+
+function drawChart(score) {
+  const canvas = document.getElementById('resultChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr);
+
+  const w = rect.width;
+  const h = 300;
+  ctx.clearRect(0, 0, w, h);
+
+  // Gauge background
+  const cx = w/2, cy = h/2 + 20, r = Math.min(w, h)/2 - 40;
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, Math.PI, 0);
+  ctx.lineWidth = 20;
+  ctx.strokeStyle = '#e2e8f0';
+  ctx.stroke();
+
+  // Gauge fill
+  const maxScore = 150;
+  const pct = Math.min(score / maxScore, 1);
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, Math.PI, Math.PI + Math.PI * pct);
+  ctx.lineWidth = 20;
+  ctx.strokeStyle = score > 70 ? '#c53030' : score > 40 ? '#ed8936' : '#38a169';
+  ctx.stroke();
+
+  // Text
+  ctx.fillStyle = '#1a202c';
+  ctx.font = 'bold 2rem sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(score, cx, cy + 10);
+  ctx.font = '0.9rem sans-serif';
+  ctx.fillStyle = '#718096';
+  ctx.fillText('Risk Score', cx, cy + 30);
+}
+
+
+// Load saved data on page load
+loadData();
+
+// Auto-save on input change
+document.querySelectorAll('input, select').forEach(el => {
+  el.addEventListener('change', saveData);
+  el.addEventListener('input', saveData);
+});
+</script>
+
+<script>
+// Load related articles
+fetch('../articles.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('related-articles');
+    if (!container) return;
+    const articles = data.articles || [];
+    const catArticles = articles.filter(a => a.category.toLowerCase() === 'general').slice(0, 3);
+    const otherArticles = articles.filter(a => a.category.toLowerCase() !== 'general').slice(0, 3);
+    const display = catArticles.length > 0 ? catArticles : otherArticles;
+    display.forEach(a => {
+      const card = document.createElement('a');
+      card.href = '../blog/' + a.slug + '.html';
+      card.className = 'cvc-article-card';
+      card.innerHTML = '<div class="cvc-card" style="padding:16px;margin-bottom:12px"><div style="font-weight:700;color:var(--cvc-primary);margin-bottom:4px">' + a.title + '</div><div style="font-size:0.8rem;color:var(--cvc-text-muted)">' + a.excerpt.substring(0, 80) + '...</div></div>';
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {});
+</script>
+
+<script>
+// Load recommended tools
+(function() {
+  const toolsContainer = document.getElementById('recommended-tools');
+  if (!toolsContainer) return;
+  const tools = ["life-insurance-needs", "health-plan-comparator", "auto-coverage-optimizer"];
+  const toolNames = {"coverage-gap-calculator": "Coverage Gap Calculator", "life-insurance-needs": "Life Insurance Needs", "health-plan-comparator": "Health Plan Comparator", "auto-coverage-optimizer": "Auto Coverage Optimizer", "home-insurance-valuator": "Home Insurance Valuator", "disability-coverage-checker": "Disability Coverage Checker"};
+  const toolIcons = {"coverage-gap-calculator": "\ud83d\udd0d", "life-insurance-needs": "\ud83d\udcb0", "health-plan-comparator": "\ud83c\udfe5", "auto-coverage-optimizer": "\ud83d\ude97", "home-insurance-valuator": "\ud83c\udfe0", "disability-coverage-checker": "\ud83e\uddaf"};
+  tools.forEach(t => {
+    const a = document.createElement('a');
+    a.href = './' + t + '.html';
+    a.className = 'cvc-tool-card';
+    a.innerHTML = '<div class="cvc-card cvc-tool-card-inner"><div class="cvc-tool-icon">' + toolIcons[t] + '</div><div class="cvc-tool-card-title">' + toolNames[t] + '</div><div class="cvc-tool-card-desc">' + toolNames[t] + '</div></div>';
+    toolsContainer.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
